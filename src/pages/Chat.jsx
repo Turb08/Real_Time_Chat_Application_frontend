@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import SockJS from "sockjs-client";
 import { Client } from "@stomp/stompjs";
+import ChatMessage from "../components/ChatMessage";
 
 function Chat({ username }) {
   const [messages, setMessages] = useState([]);
@@ -81,29 +82,13 @@ function Chat({ username }) {
         <div className="connecting">Connected as {username}</div>
         <ul id="messageArea" ref={messageAreaRef}>
           {messages.map((msg, index) => (
-            <li
+            <ChatMessage
               key={index}
-              className={msg.type === "CHAT" ? "chat-message" : "event-message"}
-            >
-              {msg.type === "CHAT" && (
-                <>
-                  <i style={{ backgroundColor: getAvatarColor(msg.sender) }}>
-                    {msg.sender[0]}
-                  </i>
-                  <span>{msg.sender}</span>
-                </>
-              )}
-              <p>
-                {msg.type === "JOIN"
-                  ? `${msg.sender} joined!`
-                  : msg.type === "LEAVE"
-                  ? `${msg.sender} left!`
-                  : msg.content}
-              </p>
-            </li>
+              message={msg}
+              getAvatarColor={getAvatarColor}
+            />
           ))}
         </ul>
-
         <form id="messageForm" onSubmit={handleSubmit}>
           <div className="form-group">
             <div className="input-group clearfix">
