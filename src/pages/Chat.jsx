@@ -37,6 +37,12 @@ function Chat({ username }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!stompClient || !stompClient.connected) {
+      console.error("STOMP client is not connected");
+      return;
+    }
+
     if (message.trim() && stompClient) {
       stompClient.publish({
         destination: "/app/chat.sendMessage",
