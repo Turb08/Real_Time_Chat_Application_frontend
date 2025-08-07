@@ -83,7 +83,7 @@ function Chat({ username }) {
     <div id="chat-page">
       <div className="chat-container">
         <div className="chat-header">
-          <h2>Spring WebSocket Chat Demo - By Alibou</h2>
+          <h2>Whatsapp Group Chat Demo</h2>
         </div>
         <div className="connecting">Connected as {username}</div>
         <ul id="messageArea" ref={messageAreaRef}>

@@ -173,6 +173,7 @@ button.accent {
   width: 100%;
   text-align: center;
   clear: both;
+  margin: 10px 0 5px;
 }
 
 #chat-page .event-message p {
@@ -236,7 +237,7 @@ button.accent {
 }
 
 .connecting {
-  padding-top: 5px;
+  padding: 5px;
   text-align: center;
   color: #777;
   position: absolute;
