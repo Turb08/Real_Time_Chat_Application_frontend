@@ -6,7 +6,24 @@ import rollupNodePolyFill from "rollup-plugin-node-polyfills";
 export default defineConfig({
   plugins: [react()],
   define: {
-    global: "globalThis", // ✅ This is the key fix!
+    global: "globalThis",
+  },
+  server: {
+    proxy: {
+      "/ws": {
+        target: "http://localhost:8080",
+        changeOrigin: true,
+        ws: true,
+      },
+      "/app": {
+        target: "http://localhost:8080",
+        changeOrigin: true,
+      },
+      "/topic": {
+        target: "http://localhost:8080",
+        changeOrigin: true,
+      },
+    },
   },
   optimizeDeps: {
     include: ["sockjs-client"],
