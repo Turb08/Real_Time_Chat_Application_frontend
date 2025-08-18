@@ -1,7 +1,54 @@
-* {
+@font-face {
+  font-family: "NataSans ExtraLight";
+  src: url("/static/NataSans-ExtraLight.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NataSans Regular";
+  src: url("/static/NataSans-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NataSans Medium";
+  src: url("/static/NataSans-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NunitoSans Light";
+  src: url("/NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NunitoSans Regular";
+  src: url("/NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NunitoSans Medium";
+  src: url("/NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+:root {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  --nata-reg: "NataSans Regular";
+  --nata-med: "NataSans Medium";
+  --nata-exlight: "NataSans ExtraLight";
+  --nunito-light: "NunitoSans Light";
+  --nunito-reg: "NunitoSans Regular";
+  --nunito-med: "NunitoSans Medium";
 }
 
 html,
@@ -11,10 +58,10 @@ body {
 }
 
 body {
+  font-family: var(--nunito-reg);
   margin: 0;
   padding: 0;
   font-weight: 400;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.58;
   color: #333;
@@ -33,14 +80,14 @@ body {
 }
 
 .form-control {
-  width: 100%;
+  width: 70%;
   min-height: 38px;
   font-size: 15px;
   border: 1px solid #c8c8c8;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 input {
@@ -59,7 +106,7 @@ h6 {
 }
 
 h1 {
-  font-size: 1.7em;
+  font-size: 1.5em;
 }
 
 a {
@@ -81,22 +128,20 @@ button {
   min-height: 38px;
 }
 
-button.default {
-  background-color: #e8e8e8;
-  color: #333;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
-}
-
 button.primary {
   background-color: #6db33f;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
   color: #fff;
+  border-radius: 18px;
+  margin-top: 10px;
 }
 
 button.accent {
+  font-family: var(--nata-reg);
   background-color: #6db33f;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
   color: #fff;
+  border-radius: 18px;
 }
 
 #username-page {
@@ -127,11 +172,11 @@ button.accent {
 .username-page-container .username-submit {
   margin-top: 10px;
   width: 100%;
-  border-radius: 18px;
 }
 
-:hover .username-submit{
+.username-submit:hover{
   color: aqua;
+
 }
 
 #chat-page {
@@ -149,6 +194,7 @@ button.accent {
   height: calc(100% - 60px);
   max-height: 600px;
   position: relative;
+  border-radius: 15px;
 }
 
 #chat-page ul {
