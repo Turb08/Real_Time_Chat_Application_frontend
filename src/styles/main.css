@@ -54,11 +54,10 @@
 html,
 body {
   height: 100%;
-  overflow: hidden;
 }
 
 body {
-  font-family: var(--nunito-reg);
+  font-family: var(--nunito-med);
   margin: 0;
   padding: 0;
   font-weight: 400;
@@ -84,10 +83,19 @@ body {
   min-height: 38px;
   font-size: 15px;
   border: 1px solid #c8c8c8;
+  border-radius: 10px;
 }
 
 .form-group {
   margin-bottom: 10px;
+}
+
+.input-message {
+ position: relative;
+ top: 0;
+ left: 40px;
+ bottom: 0;
+ right: 0;
 }
 
 input {
@@ -134,14 +142,21 @@ button.primary {
   color: #fff;
   border-radius: 18px;
   margin-top: 10px;
+  text-align: center;
 }
 
 button.accent {
   font-family: var(--nata-reg);
-  background-color: #6db33f;
+  background-color: #50bd08;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
-  color: #fff;
+  color: #000000;
   border-radius: 18px;
+  transition: background-color 0.4s ease-in, color 0.4s ease-in;
+}
+
+.accent:hover{
+  color: #ffffff;
+  background-color: #3b5f21;
 }
 
 #username-page {
@@ -171,12 +186,7 @@ button.accent {
 
 .username-page-container .username-submit {
   margin-top: 10px;
-  width: 100%;
-}
-
-.username-submit:hover{
-  color: aqua;
-
+  width: 30%;
 }
 
 #chat-page {
@@ -190,7 +200,7 @@ button.accent {
   margin-right: auto;
   background-color: #fff;
   box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
-  margin-top: 30px;
+  margin-top: 50px;
   height: calc(100% - 60px);
   max-height: 600px;
   position: relative;
@@ -201,8 +211,6 @@ button.accent {
   list-style-type: none;
   background-color: #fff;
   margin: 0;
-  overflow: auto;
-  overflow-y: scroll;
   padding: 0 20px 0px 20px;
   height: calc(100% - 150px);
 }
@@ -220,6 +228,11 @@ button.accent {
 
 #chat-page ul li p {
   margin: 0;
+}
+
+#chat-page #messageArea{
+  overflow:scroll;
+  overflow-x: auto;
 }
 
 #chat-page .event-message {
@@ -244,7 +257,6 @@ button.accent {
   position: absolute;
   width: 42px;
   height: 42px;
-  overflow: hidden;
   left: 10px;
   display: inline-block;
   vertical-align: middle;
@@ -293,9 +305,9 @@ button.accent {
   padding: 5px;
   text-align: center;
   color: #777;
-  position: absolute;
-  top: 65px;
+  position: relative;
   width: 100%;
+  top: 10px;
 }
 
 @media screen and (max-width: 730px) {

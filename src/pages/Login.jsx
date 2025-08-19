@@ -18,7 +18,7 @@ function Login({ onLogin }) {
     <div id="username-page">
       <div className="username-page-container">
         <h1 className="title">
-          Type your username to enter the WhatsApp Chatroom
+          Type your username to enter the Chatroom
         </h1>
         <form id="usernameForm" onSubmit={handleSubmit}>
           <div className="form-group">

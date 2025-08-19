@@ -103,7 +103,7 @@ function Chat({ username }) {
                 id="message"
                 placeholder="Type a message..."
                 autoComplete="off"
-                className="form-control"
+                className="form-control input-message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               />
