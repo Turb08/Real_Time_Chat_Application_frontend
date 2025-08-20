@@ -3,11 +3,14 @@ import { useState } from "react";
 function Login({ onLogin }) {
   // State to hold the username input
   const [name, setName] = useState("");
+  const [error, setError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name.trim()) {
       onLogin(name.trim());
+    } else {
+      setError(true);
     }
   };
 
@@ -17,19 +20,20 @@ function Login({ onLogin }) {
     // When the form is submitted, it calls the onLogin function with the entered username
     <div id="username-page">
       <div className="username-page-container">
-        <h1 className="title">
-          Type your username to enter the Chatroom
-        </h1>
+        <h1 className="title">Type your username to enter the Chatroom</h1>
         <form id="usernameForm" onSubmit={handleSubmit}>
           <div className="form-group">
             <input
               type="text"
               id="name"
-              placeholder="Username"
+              placeholder={error ? "Enter your username!" : "Username"}
               autoComplete="off"
-              className="form-control"
+              className={`form-control ${error ? "input-error" : ""}`}
               value={name}
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => {
+                setName(e.target.value);
+                setError(false);
+              }}
             />
           </div>
           <div className="form-group">
