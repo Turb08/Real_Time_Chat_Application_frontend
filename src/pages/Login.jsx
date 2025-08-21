@@ -37,7 +37,7 @@ function Login({ onLogin }) {
             />
           </div>
           <div className="form-group">
-            <button type="submit" className="accent username-submit">
+            <button type="submit" className="accent username-submit"><span></span><span></span><span></span><span></span>
               Start Chatting
             </button>
           </div>

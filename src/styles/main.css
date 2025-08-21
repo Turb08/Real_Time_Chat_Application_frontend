@@ -95,17 +95,16 @@ body {
   color: rgb(207, 22, 22);
 }
 
-
 .form-group {
   margin-bottom: 10px;
 }
 
 .input-message {
- position: relative;
- top: 0;
- left: 40px;
- bottom: 0;
- right: 0;
+  position: relative;
+  top: 0;
+  left: 40px;
+  bottom: 0;
+  right: 0;
 }
 
 input {
@@ -156,17 +155,111 @@ button.primary {
 }
 
 button.accent {
-  font-family: var(--nata-reg);
-  background-color: #50bd08;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+  font-family: var(--nunito-reg);
+  position: relative;
+  display: inline-block;
+  padding: 25px 30px;
+  margin: 50px 0;
+  color: #6db33f;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  overflow: hidden;
+  margin-right: 10px;
+}
+.accent:hover {
+  background: #6db33f;
   color: #000000;
-  border-radius: 18px;
-  transition: background-color 0.4s ease-in, color 0.4s ease-in;
+  box-shadow:
+    0 0 5px #6db33f,
+    0 0 25px #6db33f,
+    0 0 50px #6db33f,
+    0 0 200px #6db33f;
+  -webkit-box-reflect: below 7px linear-gradient(transparent, #0005);
+}
+/* .accent:nth-child(1) {
+  filter: hue-rotate(270deg);
+}
+.accent:nth-child(2) {
+  filter: hue-rotate(110deg);
+} */
+.accent span {
+  position: absolute;
+  display: block;
+}
+.accent span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #6db33f);
+  animation: animate1 1s linear infinite;
+  animation-delay: 0.25s;
+}
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+.accent span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #6db33f);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.5s;
+}
+@keyframes animate2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+.accent span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #6db33f);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.75s;
+}
+@keyframes animate3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
 }
 
-.accent:hover{
-  color: #ffffff;
-  background-color: #3b5f21;
+.accent span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #6db33f);
+  animation: animate4 1s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
 }
 
 #username-page {
@@ -176,12 +269,9 @@ button.accent {
 .username-page-container {
   background: #fff;
   box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
-  border-radius: 2px;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   display: inline-block;
-  margin-top: 42px;
-  vertical-align: middle;
   position: relative;
   padding: 35px 55px 35px;
   min-height: 250px;
@@ -195,8 +285,8 @@ button.accent {
 }
 
 .username-page-container .username-submit {
-  margin-top: 10px;
-  width: 30%;
+  margin-top: 20px;
+  width: 45%;
 }
 
 #chat-page {
@@ -240,8 +330,8 @@ button.accent {
   margin: 0;
 }
 
-#chat-page #messageArea{
-  overflow:scroll;
+#chat-page #messageArea {
+  overflow: scroll;
   overflow-x: auto;
 }
 
